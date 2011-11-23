@@ -18,9 +18,16 @@
 #import "FBLoginDialog.h"
 #import "FBRequest.h"
 
+
+#if RUN_KIF_TESTS
+static NSString* kRestserverBaseURL =  @"http://0.0.0.0:4567/facebook";
+static NSString* kDialogBaseURL = @"http://0.0.0.0:4567/facebook/";
+static NSString* kGraphBaseURL = @"http://0.0.0.0:4567/facebook";
+#else
+static NSString* kRestserverBaseURL = @"https://api.facebook.com/method/";
 static NSString* kDialogBaseURL = @"https://m.facebook.com/dialog/";
 static NSString* kGraphBaseURL = @"https://graph.facebook.com/";
-static NSString* kRestserverBaseURL = @"https://api.facebook.com/method/";
+#endif
 
 static NSString* kFBAppAuthURLScheme = @"fbauth";
 static NSString* kFBAppAuthURLPath = @"authorize";
